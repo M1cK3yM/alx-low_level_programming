@@ -1,27 +1,24 @@
 #include "main.h"
-
 /**
- * leet - check the code for Holberton School students.
- * @str: String to be converted
- * Return: Always 0.
+ * leet - encode into 1337speak
+ * @n: input value
+ * Return: n value
  */
-char *leet(char *str)
+char *leet(char *n)
 {
-	char num[] = "01347";
-	char upLTR[] = "OLEAT";
-	char lowLTR[] = "oleat";
 	int i, j;
+	char s1[] = "aAeEoOtTlL";
+	char s2[] = "4433007711";
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; n[i] != '\0'; i++)
 	{
-		for (j = 0; lowLTR[j] != '\0'; j++)
+		for (j = 0; j < 10; j++)
 		{
-			if (str[i] == upLTR[j] || str[i] == lowLTR[j])
+			if (n[i] == s1[j])
 			{
-				str[i] = num[j];
-				break;
+				n[i] = s2[j];
 			}
 		}
 	}
-	return (str);
+	return (n);
 }

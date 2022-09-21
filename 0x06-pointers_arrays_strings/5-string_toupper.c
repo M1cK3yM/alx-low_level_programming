@@ -1,28 +1,20 @@
 #include "main.h"
-
 /**
- * string_toupper - check the code for Holberton School students.
- * @str: String to be reversed
- * Return: Always 0.
+ * string_toupper - change all lowercase to uppercase
+ * @n: pointer
+ *
+ * Return: n
  */
-char *string_toupper(char *str)
+char *string_toupper(char *n)
 {
-	int i, j;
-	char letter;
+	int i;
 
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-
-	for (j = 0; j < i; j++)
+	while (n[i] != '\0')
 	{
-		letter = str[j];
-		if (letter >= 'a' && letter <= 'z')
-		{
-			letter -= 32;
-			str[j] = letter;
-		}
+		if (n[i] >= 'a' && n[i] <= 'z')
+			n[i] = n[i] - 32;
+		i++;
 	}
-
-	return (str);
+	return (n);
 }
